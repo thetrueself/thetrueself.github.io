@@ -1,0 +1,50 @@
+{{ define "body-class" }}template-search{{ end }}
+{{ define "head" }}
+{{- with .OutputFormats.Get "json" -}}
+<link rel="preload" href="{{ .Permalink }}" as="fetch" crossorigin="anonymous">
+{{- end -}}
+{{ end }}
+{{ define "main" }}
+<form autocomplete="off" action="{{ .Permalink }}" class="search-form"{{ with .OutputFormats.Get "json" -}} data-json="{{ .Permalink }}"{{- end }}>
+<p>
+    <label>{{ T "search.title" }}</label>
+    <input name="keyword" placeholder="{{ T `search.placeholder` }}" />
+</p>
+
+<button title="{{ T `search.title` }}">
+    {{ partial "helper/icon" "search" }}
+</button>
+</form>
+
+<!--tag-->
+
+<section class="widget tagCloud">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "tag" }}
+    </div>
+    <h2 class="widget-title section-title">{{ T "widget.tagCloud.title" }}</h2>
+
+    <div class="tagCloud-tags article-tags">
+        {{ range .Site.Taxonomies.tags }}
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        {{ end }}
+    </div>
+</section>
+
+
+
+<div class="search-result">
+    <h3 class="search-result--title section-title"></h3>
+    <div class="search-result--list article-list--compact"></div>
+</div>
+
+<script id="search_result_title">
+    window.searchResultTitleTemplate = "{{ T `search.resultTitle` }}"
+</script>
+
+{{- $opts := dict "minify" hugo.IsProduction "JSXFactory" "createElement" -}}
+{{- $searchScript := resources.Get "ts/search.tsx" | js.Build $opts -}}
+<script type="text/javascript" src="{{ $searchScript.RelPermalink }}" defer></script>
+
+{{ partialCached "footer/footer" . }}
+{{ end }}

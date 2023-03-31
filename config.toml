@@ -3,12 +3,6 @@ DefaultContentLanguage = 'zh-cn'
 title = '大师博客'
 theme = 'hugo-theme-stack'
 
-[languages.en]
-languageName = "English"
-title = "Master Blog"
-description = "Master blog (dsblog.cc) is dedicated to sharing technical articles and explaining literary works. Welcome to bookmark this site."
-weight = 1
-
 [languages.zh-cn]
 languageName = "中文 (Chinese)"
 title = "大师博客"
@@ -66,6 +60,7 @@ lineNoStart = 1
 lineNos = true
 lineNumbersInTable = true
 tabWidth = 4
+
 
 
 
