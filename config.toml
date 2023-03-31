@@ -1,0 +1,71 @@
+baseURL = 'https://dsblog.cc/'
+DefaultContentLanguage = 'zh-cn'
+title = '大师博客'
+theme = 'hugo-theme-stack'
+
+[languages.en]
+languageName = "English"
+title = "Master Blog"
+description = "Master blog (dsblog.cc) is dedicated to sharing technical articles and explaining literary works. Welcome to bookmark this site."
+weight = 1
+
+[languages.zh-cn]
+languageName = "中文 (Chinese)"
+title = "大师博客"
+description = "大师博客（dsblog.cc）致力于分享技术文章，解说文学作品，欢迎收藏本站。"
+weight = 2
+
+
+[params.defaultImage.opengraph]
+enabled = false
+local = false
+
+  [params.colorScheme]
+  toggle = true
+  default = "auto"
+
+
+[params]
+  subtitle = "Hugo is Absurdly Fast!"
+  author = "John Doe"
+  favicon = "/favicon.ico"
+
+# 作者配置
+[author]
+  name = "phyger"
+  email = "phygerr@gmail.com"
+  link = "https://"
+
+[params.sidebar]
+  compact = false
+  subtitle = "分享技术 解说经典"
+
+    [params.sidebar.avatar]
+    enabled = true
+    local = true
+    src = "/img/avatar.png"
+
+[params.article]
+  math = false
+  toc = true
+  readingTime = false
+
+[markup.goldmark.renderer]
+unsafe = false
+
+[markup.tableOfContents]
+endLevel = 4
+ordered = true
+startLevel = 2
+
+[markup.highlight]
+noClasses = false
+codeFences = true
+guessSyntax = true
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+tabWidth = 4
+
+
+

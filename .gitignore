@@ -1,0 +1,7 @@
+.vscode/
+.idea/
+.hugo_build.lock
+.DS_Store
+public/
+resources/
+themes/hugo-theme-stack
