@@ -2,6 +2,7 @@ baseURL = 'https://dsblog.cc/'
 DefaultContentLanguage = 'zh-cn'
 title = '大师博客'
 theme = 'hugo-theme-stack'
+disablePathToLower = true
 
 [languages.zh-cn]
 languageName = "中文 (Chinese)"
@@ -18,7 +19,6 @@ local = false
   toggle = true
   default = "auto"
 
-
 [params]
   subtitle = "Hugo is Absurdly Fast!"
   author = "John Doe"
@@ -32,7 +32,7 @@ local = false
 
 [params.sidebar]
   compact = false
-  subtitle = "分享技术 解说经典"
+  subtitle = "分享技术 解读经典"
 
     [params.sidebar.avatar]
     enabled = true
@@ -60,6 +60,9 @@ lineNoStart = 1
 lineNos = true
 lineNumbersInTable = true
 tabWidth = 4
+
+[permalinks]
+  post = '/articles/:slug/'
 
 
 
